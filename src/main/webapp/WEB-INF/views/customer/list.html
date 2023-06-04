@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a th:href="@{customer/create}">Create customer</a>
+<table border="1">
+    <tr>
+        <th>STT</th>
+        <th>NAME</th>
+        <th>PROVINCE</th>
+    </tr>
+    <tr th:each="cm,element:${listCustomer}">
+        <td th:text="${element.count}"></td>
+        <td th:text="${cm.name}"></td>
+        <td th:text="${cm.province.getName()}"></td>
+    </tr>
+</table>
+<a href="/">Back</a>
+</body>
+</html>

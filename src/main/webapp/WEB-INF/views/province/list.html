@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<h1>Province List</h1>
+<a th:href="@{province/create}">Create Province</a>
+<table border="1">
+    <tr>
+        <th>STT</th>
+        <th>NAME</th>
+    </tr>
+    <tr th:each="pr,element:${listProvince}">
+        <td th:text="${element.count}"></td>
+        <td th:text="${pr.name}"></td>
+    </tr>
+</table>
+<a href="/">Back</a>
+</body>
+</html>
